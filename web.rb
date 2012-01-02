@@ -9,6 +9,10 @@ class App < Sinatra::Base
   get "/" do
     markdown :index, :layout_engine => :erb
   end
+
+  get "/*" do |page|
+    markdown page.to_sym, :layout_engine => :erb
+  end
 end
 
 __END__
